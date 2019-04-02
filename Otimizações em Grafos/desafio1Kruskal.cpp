@@ -20,20 +20,20 @@ int n,m;
 int a,b,v;
 vector<edge>g;
 
-int conj[N]; 
+int p[N]; 
 
 
 int findset(int u)
 {
-	if(conj[u] == u) return u;
-	return conj[u] = findset(conj[u]);
+	if(p[u] == u) return u;
+	return p[u] = findset(p[u]);
 }
 int unionset(int a, int b)
 {
 	a = findset(a);
 	b = findset(b);
 
-	conj[b] = a;
+	p[b] = a;
 }
 
 int main()
@@ -60,7 +60,7 @@ int main()
 		g.push_back(x);
 	
 	}
-	for(int i = 1 ; i <= n ; i++) conj[i] = i;
+	for(int i = 1 ; i <= n ; i++) p[i] = i;
 	sort(g.begin(),g.end());
 	
 	mst = 0;
