@@ -68,7 +68,20 @@ int prim(int x)
 int main()
 {
 	scanf("%d%d",&n,&m);
-
+	map<int, char> mp;
+	int cont = 1;
+	mp[1] = 'A';
+	mp[2] = 'B';
+	mp[3] = 'C';
+	mp[4] = 'D';
+	mp[5] = 'E';
+	mp[6] = 'F';
+	mp[7] = 'G';
+	mp[8] = 'H';
+	mp[9] = 'I';
+	mp[10] = 'J';
+	mp[11] = 'L';
+	mp[12] = 'M';
 	for(int i = 0 ; i < m ; i++)
 	{
 		scanf("%d%d%d",&a,&b,&v);
@@ -101,7 +114,7 @@ int main()
 	printf("Arestas da melhor solucao:\n");
 	for(int i = 0 ; i < arestas.size(); i++)
 	{
-		printf("%d - %d\n", arestas[i].first, arestas[i].second);
+		printf("%c - %c\n", mp[arestas[i].first], mp[arestas[i].second]);
 	}
 
 	return 0;
